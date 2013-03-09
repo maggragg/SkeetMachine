@@ -9,7 +9,7 @@ const int ledPin = 0; //prufuljós
 
 //relay pinnar
 const int relay_1 = 13; //Motor á mark
-const int relay_2 = 3; //Motor á turni
+const int relay_2 = 13; //Motor á turni
 const int relay_3 = 4; //Ljos á marki
 const int relay_4 = 5; //Ljos á turni
 
@@ -79,7 +79,6 @@ void loop() {
      if(buttonStateB == HIGH) {
        //ef merki kemur inn á ch2 þá senda mark 2
        Serial.println("Button pushed for Tower!");
-       Serial.println(millis());
        mark = 2;
      } 
    }
@@ -125,7 +124,6 @@ void loop() {
        else if (mark == 2) {
          digitalWrite(relay_2, HIGH);
          Serial.println("CLAY GOES OFF!! tower");
-         Serial.println(millis());
          digitalWrite(relay_4, LOW);
          sensor2 = 0;
          s2time = millis();
